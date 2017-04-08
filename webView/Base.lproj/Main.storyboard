@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="65d-Oe-Eef">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Web View Controller-->
+        <scene sceneID="paA-Gf-Bpk">
+            <objects>
+                <viewController id="65d-Oe-Eef" customClass="WebViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="j6U-tc-44j"/>
+                        <viewControllerLayoutGuide type="bottom" id="pCz-j8-faR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Lwb-7p-5E9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" paginationMode="topToBottom" translatesAutoresizingMaskIntoConstraints="NO" id="u0d-7b-tR6">
+                                <rect key="frame" x="0.0" y="20" width="320" height="416"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="TFd-fW-BEx" appends="YES" id="ktf-DH-5Q9"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="u0d-7b-tR6" secondAttribute="trailing" id="ERE-Vg-SpQ"/>
+                            <constraint firstItem="u0d-7b-tR6" firstAttribute="leading" secondItem="Lwb-7p-5E9" secondAttribute="leading" id="Mds-d3-3bP"/>
+                            <constraint firstItem="pCz-j8-faR" firstAttribute="top" secondItem="u0d-7b-tR6" secondAttribute="bottom" id="WwV-we-aVw"/>
+                            <constraint firstItem="u0d-7b-tR6" firstAttribute="top" secondItem="j6U-tc-44j" secondAttribute="bottom" id="wli-t0-hV4"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem image="WebViewControllerBack" id="8Dw-Gf-aPW">
+                            <connections>
+                                <action selector="goBack:" destination="65d-Oe-Eef" id="kDw-uU-Yrb"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem image="WebViewControllerNext" id="GdS-Zb-0g5">
+                            <connections>
+                                <action selector="goForward:" destination="65d-Oe-Eef" id="3n8-Na-hhD"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem image="WebViewControllerRefresh" id="9se-lJ-gih">
+                            <connections>
+                                <action selector="reloadTap:" destination="65d-Oe-Eef" id="FqQ-AV-WUT"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem image="ReviewAppStore-icon" id="lOg-z1-ATS">
+                            <connections>
+                                <action selector="reviewAppStore:" destination="65d-Oe-Eef" id="5Ij-zo-X5b"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="backBarButtonItem" destination="GdS-Zb-0g5" id="ZLb-dx-AQZ"/>
+                        <outlet property="forwardBarButtonItem" destination="GdS-Zb-0g5" id="JGM-Wk-H5d"/>
+                        <outlet property="refreshBarButtonItem" destination="9se-lJ-gih" id="I72-C1-Uyz"/>
+                        <outlet property="reviewBarButtonItem" destination="lOg-z1-ATS" id="iHV-Xe-aec"/>
+                        <outlet property="webView" destination="u0d-7b-tR6" id="JXK-RE-2YZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gEV-rl-BLj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="TFd-fW-BEx">
+                    <connections>
+                        <action selector="swipeGoBack:" destination="65d-Oe-Eef" id="fLx-ff-af4"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1260" y="-10"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ReviewAppStore-icon" width="30" height="30"/>
+        <image name="WebViewControllerBack" width="12" height="21"/>
+        <image name="WebViewControllerNext" width="12" height="21"/>
+        <image name="WebViewControllerRefresh" width="26" height="44"/>
+    </resources>
+</document>
